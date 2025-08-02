@@ -128,7 +128,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                             className={styles.searchInput}
                         />
                         <button onClick={onClose} className={styles.closeButton}>
-                            <X size={20} />
+                            <X size={20} className={styles.closeIcon} />
                         </button>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                         <div className={styles.emptyState}>
                             <div className={styles.suggestions}>
                                 <h3 className={styles.sectionTitle}>
-                                    <Zap size={16} />
+                                    <Zap size={16} className={styles.sectionIcon} />
                                     Быстрый доступ
                                 </h3>
                                 <div className={styles.suggestionsList}>
@@ -148,7 +148,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                             className={styles.suggestionItem}
                                             onClick={() => handleSelectPage(page)}
                                         >
-                                            <FileText size={16} />
+                                            <FileText size={16} className={styles.suggestionIcon} />
                                             <div className={styles.suggestionContent}>
                                                 <div className={styles.suggestionTitle}>{page.title}</div>
                                                 <div className={styles.suggestionCategory}>{page.category}</div>
@@ -161,7 +161,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                             {recentSearches.length > 0 && (
                                 <div className={styles.recent}>
                                     <h3 className={styles.sectionTitle}>
-                                        <Clock size={16} />
+                                        <Clock size={16} className={styles.sectionIcon} />
                                         Недавние
                                     </h3>
                                     <div className={styles.recentList}>
@@ -193,7 +193,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                                 onMouseEnter={() => setSelectedIndex(index)}
                                             >
                                                 <div className={styles.resultIcon}>
-                                                    <FileText size={16} />
+                                                    <FileText size={16} className={styles.resultFileIcon} />
                                                 </div>
                                                 <div className={styles.resultContent}>
                                                     <div className={styles.resultTitle}>

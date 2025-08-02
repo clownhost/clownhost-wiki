@@ -1,8 +1,11 @@
-import { Search, Menu, X } from 'lucide-react';
+import { Search, Menu, X, Moon, Sun } from 'lucide-react';
 import { useHotkeys } from 'react-hotkeys-hook';
+import { useTheme } from '../../hooks/useTheme';
 import styles from './Header.module.css';
 
 const Header = ({ onSearch, onToggleSidebar, isSidebarOpen }) => {
+    const { isDarkMode, toggleTheme } = useTheme();
+    
     useHotkeys('ctrl+k', (e) => {
         e.preventDefault();
         onSearch();
@@ -44,6 +47,15 @@ const Header = ({ onSearch, onToggleSidebar, isSidebarOpen }) => {
                     <span className={styles.statusDot}></span>
                     Все системы работают
                 </div>
+                
+                <button
+                    className={styles.themeToggle}
+                    onClick={toggleTheme}
+                    aria-label={isDarkMode ? 'Переключить на светлую тему' : 'Переключить на темную тему'}
+                    title={isDarkMode ? 'Светлая тема' : 'Темная тема'}
+                >
+                    {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
                 
                 <button
                     className={styles.mobileSearchButton}

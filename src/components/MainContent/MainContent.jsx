@@ -1,15 +1,17 @@
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneLight, oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 import { Calendar, User, Clock, ExternalLink, Check } from 'lucide-react';
 import { useWikiWithRouter } from '../../hooks/useWiki';
+import { useTheme } from '../../hooks/useTheme';
 import { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import styles from './MainContent.module.css';
 
 const MainContent = ({ isSidebarOpen }) => {
   const { currentPage } = useWikiWithRouter();
+  const { isDarkMode } = useTheme();
   const [copiedStates, setCopiedStates] = useState({});
   const mainRef = useRef(null);
 
@@ -99,7 +101,7 @@ const MainContent = ({ isSidebarOpen }) => {
               </button>
             </div>
             <SyntaxHighlighter
-              style={oneLight}
+              style={isDarkMode ? oneDark : oneLight}
               language={match[1]}
               PreTag="div"
               className={styles.syntaxHighlighter}

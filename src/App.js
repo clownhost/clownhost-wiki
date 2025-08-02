@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import MainContent from './components/MainContent/MainContent';
 import SearchModal from './components/SearchModal/SearchModal';
 import { WikiProvider } from './hooks/useWiki';
+import { ThemeProvider } from './hooks/useTheme';
 import styles from './App.module.css';
 
 function AppContent() {
@@ -55,11 +56,13 @@ function AppContent() {
 
 function App() {
   return (
-    <WikiProvider>
-      <Router>
-        <AppContent />
-      </Router>
-    </WikiProvider>
+    <ThemeProvider>
+      <WikiProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </WikiProvider>
+    </ThemeProvider>
   );
 }
 

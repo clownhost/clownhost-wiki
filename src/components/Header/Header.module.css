@@ -2,14 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 20px;
   height: 64px;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-secondary);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--border-primary);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .left {
@@ -29,10 +30,16 @@
   background: none;
   border-radius: 8px;
   cursor: pointer;
-  color: #6b7280;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
   transition: all 0.2s ease;
+}
+
+.menuButton:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
 }
 
 .logo {
@@ -68,19 +75,18 @@
   gap: 12px;
   width: 100%;
   padding: 10px 16px;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 14px;
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
-.searchButton:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+.searchButton:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
 }
 
 .searchText {
@@ -90,11 +96,11 @@
 
 .kbd {
   padding: 2px 6px;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--kbd-bg);
   border-radius: 4px;
   font-size: 12px;
   font-family: ui-monospace, SFMono-Regular, monospace;
-  color: #9ca3af;
+  color: var(--text-tertiary);
 }
 
 .mobileLogo {
@@ -114,13 +120,13 @@
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
 .statusDot {
   width: 8px;
   height: 8px;
-  background: #10b981;
+  background: var(--success-color);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -132,24 +138,35 @@
   width: 40px;
   height: 40px;
   border: none;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
   border-radius: 10px;
   cursor: pointer;
-  color: #6b7280;
+  color: var(--text-secondary);
   transition: all 0.2s ease;
 }
 
 .mobileSearchButton:hover {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.12);
-  color: #374151;
+  color: var(--text-primary);
 }
 
-.mobileSearchButton:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+  color: var(--text-primary);
 }
 
 @keyframes pulse {
@@ -203,6 +220,10 @@
 
   .status {
     display: none;
+  }
+
+  .themeToggle {
+    display: flex;
   }
 
   .mobileSearchButton {
