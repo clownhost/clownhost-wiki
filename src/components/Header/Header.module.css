@@ -20,22 +20,19 @@
 }
 
 .menuButton {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border: none;
   background: none;
   border-radius: 8px;
   cursor: pointer;
   color: #6b7280;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
-}
-
-.menuButton:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #374151;
 }
 
 .logo {
@@ -61,6 +58,8 @@
   flex: 1;
   max-width: 480px;
   margin: 0 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .searchButton {
@@ -76,11 +75,6 @@
   transition: all 0.2s ease;
   font-size: 14px;
   color: #6b7280;
-}
-
-.searchButton:hover {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .searchButton:focus {
@@ -101,6 +95,10 @@
   font-size: 12px;
   font-family: ui-monospace, SFMono-Regular, monospace;
   color: #9ca3af;
+}
+
+.mobileLogo {
+  display: none;
 }
 
 .right {
@@ -155,12 +153,10 @@
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 1;
   }
-
   50% {
     opacity: 0.6;
   }
@@ -176,8 +172,28 @@
     flex: 0 0 auto;
   }
 
-  .center {
+  .menuButton {
+    display: flex;
+  }
+
+  .logo {
     display: none;
+  }
+
+  .center {
+    flex: 1;
+    margin: 0;
+    max-width: none;
+  }
+
+  .searchButton {
+    display: none;
+  }
+
+  .mobileLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .right {

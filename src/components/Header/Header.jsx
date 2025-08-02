@@ -33,6 +33,10 @@ const Header = ({ onSearch, onToggleSidebar, isSidebarOpen }) => {
                     <span className={styles.searchText}>Поиск...</span>
                     <kbd className={styles.kbd}>⌘K</kbd>
                 </button>
+
+                <div className={styles.mobileLogo}>
+                    <img src={process.env.PUBLIC_URL + '/chwikil.svg'} alt="ClownHost Wiki" className={styles.logoImage} />
+                </div>
             </div>
 
             <div className={styles.right}>
