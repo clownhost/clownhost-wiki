@@ -1,7 +1,8 @@
 {
   "name": "clownhost-wiki",
   "version": "0.1.0",
-  "private": true,
+  "description": "Быстрая, красивая и современная система документация от проекта ClownHost.",
+  "author": "whxtelxs",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.4",
@@ -9,8 +10,16 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.7.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "lucide-react": "^0.468.0",
+    "clsx": "^2.1.1",
+    "fuse.js": "^7.0.0",
+    "react-hotkeys-hook": "^4.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

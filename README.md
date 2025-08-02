@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# ClownHost Wiki 📚
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Современная система документации на React с полной поддержкой Markdown, роутингом и красивым адаптивным дизайном.
 
-## Available Scripts
+![ClownHost Wiki](https://clown.host/gitwiki.jpg)
 
-In the project directory, you can run:
+## ✨ Возможности
 
-### `npm start`
+- 🚀 **Быстрый поиск** - мгновенный поиск по всей документации (Ctrl+K)
+- 📝 **Markdown файлы** - контент хранится в отдельных `.md` файлах
+- 🔗 **URL роутинг** - каждая страница имеет уникальный URL для шаринга
+- 🎨 **Современный дизайн** - красивый и отзывчивый интерфейс
+- 📱 **Мобильная адаптация** - оптимизирован для всех устройств
+- 📋 **Копирование кода** - кнопка копирования с анимацией для блоков кода
+- 🔍 **Подсветка синтаксиса** - поддержка множества языков программирования
+- ⚡ **Горячие клавиши** - быстрая навигация с клавиатуры
+- 🌳 **Древовидная навигация** - автоматическая организация по категориям
+- 🖼 **Галерея изображений** - встроенная поддержка изображений с подписями
+- 🔄 **Автозагрузка контента** - асинхронная загрузка markdown файлов
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Быстрый старт
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Установка зависимостей
+```bash
+npm install
+```
 
-### `npm test`
+### Запуск в режиме разработки
+```bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Приложение откроется в браузере по адресу [http://localhost:3000](http://localhost:3000)
 
-### `npm run build`
+### Сборка для продакшена
+```bash
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📖 Добавление контента
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Структура контента
+Контент хранится в виде отдельных Markdown файлов в папке `public/content/`:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+public/content/
+├── welcome.md          # Главная страница
+├── getting-started.md  # Руководство по началу работы
+├── user-guide.md       # Пользовательское руководство
+├── api-docs.md         # API документация
+└── ui-components.md    # UI компоненты
+```
 
-### `npm run eject`
+### Метаданные страниц
+Метаданные страниц определяются в `src/data/wikiData.js`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+{
+  id: 1,
+  title: 'Название страницы',
+  slug: 'page-slug',           // URL slug для роутинга
+  category: 'Категория',       // Группировка в сайдбаре
+  filename: 'page-slug.md',    // Имя markdown файла
+  lastModified: '2024-12-23',
+  author: 'Автор',
+  description: 'Краткое описание страницы'
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Создание новой страницы
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Создайте markdown файл** в `public/content/`:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Добавьте метаданные** в `src/data/wikiData.js`:
+```javascript
+export const wikiMetadata = [
+  // ... существующие страницы
+  {
+    id: 6,
+    title: 'Новая страница',
+    slug: 'new-page',
+    category: 'Руководства',
+    filename: 'new-page.md',
+    lastModified: '2024-12-23',
+    author: 'Ваше имя',
+    description: 'Описание новой страницы'
+  }
+];
+```
 
-## Learn More
+### Поддерживаемый Markdown
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Заголовки** - H1-H6 с автоматическими якорями
+- **Списки** - маркированные и нумерованные  
+- **Ссылки** - внутренние и внешние (с иконкой)
+- **Изображения** - с подписями и адаптивным размером
+- **Таблицы** - с адаптивным горизонтальным скроллом
+- **Код** - инлайн и блоки с подсветкой синтаксиса
+- **Цитаты** - с красивым оформлением
+- **Текст** - жирный, курсивный, зачеркнутый
+- **GitHub Flavored Markdown** - чекбоксы, таблицы, автолинки
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📄 Лицензия
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Проект распространяется под лицензией MIT — свободно используйте и модифицируйте, но обязательно сохраняйте указание авторства и ссылку на исходный репозиторий, как на open source проект.
