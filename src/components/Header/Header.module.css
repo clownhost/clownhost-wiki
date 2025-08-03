@@ -183,6 +183,7 @@
   .header {
     padding: 0 16px;
     height: 56px;
+    position: relative;
   }
 
   .left {
@@ -211,6 +212,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%;
+    pointer-events: none;
   }
 
   .right {

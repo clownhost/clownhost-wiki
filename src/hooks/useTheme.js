@@ -31,14 +31,6 @@ export const ThemeProvider = ({ children }) => {
     }
   }, [isDarkMode]);
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark-theme');
-    } else {
-      document.documentElement.classList.add('light-theme');
-    }
-  }, []);
-
   const toggleTheme = () => {
     setIsDarkMode(prev => !prev);
   };
